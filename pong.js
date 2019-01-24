@@ -18,13 +18,13 @@ let config = {
 };
 
 /* send the basic config to phaser */
-let game = new Phaser.Game(config);
+new Phaser.Game(config);
 
 function preload()
 {
     /* Set global variables */
-    game.points = 0;
-    game.lost = 0;
+    this.game.points = 0;
+    this.game.lost = 0;
 
     /* preload images */
     this.load.image('paddle', 'sprites/paddle.png');
@@ -35,7 +35,7 @@ function create()
 {
     /* create and initialize the game */
     /* set the world bounds so we can bounce (the ball) and collide (the paddels) at the upper and lower bounds */
-    this.physics.world.setBounds(0, 0, game.config.width, game.config.height, false, false, true, true);
+    this.physics.world.setBounds(0, 0, this.game.config.width, this.game.config.height, false, false, true, true);
 
     /* first the paddles */
     this.lPaddle = this.physics.add.sprite(10, 300, 'paddle');
@@ -69,10 +69,10 @@ function create()
 
 function update()
 {
-    if (!game.lost) {
+    if (!this.game.lost) {
         /* check if lost */
         if (this.ball.x < 0) {
-            game.lost = 1;
+            this.game.lost = 1;
             this.ball.velocity = 0;
             this.add.text(300, 300, '*** YOU LOST ***', { fontSize: '32px', fill: '#FF0000' });
         }
