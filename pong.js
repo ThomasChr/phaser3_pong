@@ -87,10 +87,6 @@ function update()
 
         /* move the computer paddle */
         this.rPaddle.y = this.ball.y;
-
-        /* Make sure the paddles do not move on collide */
-        this.lPaddle.body.immovable = true;
-        this.rPaddle.body.immovable = true;
     }
 }
 
