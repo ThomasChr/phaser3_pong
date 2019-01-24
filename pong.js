@@ -74,6 +74,7 @@ function update()
         if (this.ball.x < 0) {
             game.lost = 1;
             this.ball.velocity = 0;
+            this.add.text(300, 300, '*** YOU LOST ***', { fontSize: '32px', fill: '#FF0000' });
         }
 
         /* react to key presses */
