@@ -19,11 +19,13 @@ let config = {
 
 /* send the basic config to phaser */
 let game = new Phaser.Game(config);
-game.points = 0;
-game.lost = 0;
 
 function preload()
 {
+    /* Set global variables */
+    game.points = 0;
+    game.lost = 0;
+
     /* preload images */
     this.load.image('paddle', 'sprites/paddle.png');
     this.load.image('ball', 'sprites/ball.png');
@@ -71,6 +73,7 @@ function update()
         /* check if lost */
         if (this.ball.x < 0) {
             game.lost = 1;
+            this.ball.velocity = 0;
         }
 
         /* react to key presses */
