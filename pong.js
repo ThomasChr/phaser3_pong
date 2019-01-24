@@ -97,8 +97,8 @@ function update()
 function lPaddleCollide()
 {
     /* We got a point */
-    game.points++;
-    this.pointsText.setText('Points: ' + game.points);
+    this.game.points++;
+    this.pointsText.setText('Points: ' + this.game.points);
 
     let ballVelocity = this.physics.velocityFromAngle(Phaser.Math.Between(-40, 40), Phaser.Math.Between(200, 800))
     this.ball.setVelocity(ballVelocity.x, ballVelocity.y);
