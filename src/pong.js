@@ -27,8 +27,8 @@ function preload()
     this.game.lost = 0;
 
     /* preload images */
-    this.load.image('paddle', '../img/paddle.png');
-    this.load.image('ball', '../img/ball.png');
+    this.load.image('paddle', 'sprites/paddle.png');
+    this.load.image('ball', 'sprites/ball.png');
 }
 
 function create()
